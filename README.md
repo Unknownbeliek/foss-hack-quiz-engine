@@ -1,32 +1,31 @@
-# 🎬 [Project Name] / Offline Movie Quiz Engine
+# 🎬 CineGnosis
 
-**The Offline-First, Zero-Latency Multiplayer Trivia Game.**
+**The Offline-First, Zero-Latency Multiplayer Movie Trivia Game.**
 
 > *Built for FOSS Hack 2026*
 
 ## 🛑 The Problem
-Standard quiz games (Kahoot, Jackbox, Skribbl) have a single point of failure: **The Internet.**
-If the venue Wi-Fi is congested or the ISP goes down, the game is over. They also require 100% online connectivity for every player, leading to lag and disconnects in crowded spaces like college auditoriums.
+Popular multiplayer quiz games (like Kahoot, Jackbox, or Skribbl) have a single point of failure: **The Internet.**
+In high-density venues like college auditoriums, hackathons, or basements with poor reception, these cloud-dependent apps frequently lag, disconnect, or crash. They also require 100% online connectivity for every player, ruining the social experience.
 
 ## ⚡ The Solution
-**[Project Name]** is a self-hosted game engine. The "Server" runs on **your** laptop, not in the cloud.
+**CineGnosis** is a self-hosted game engine that runs entirely on the host's machine. It decouples gameplay from ISP stability.
 * **Internet Down?** No problem. Players join via your Local Hotspot (LAN).
 * **Remote Friends?** No problem. They join via a secure Tunnel (WAN).
 * **Latency?** Near Zero (2ms) for local players.
 
-## 🚀 Key Features
-* **Hybrid Network Core:** Supports LAN (Offline) and WAN (Online) players in the same game room.
-* **"Forgiving" Input System:** Uses `Fuse.js` for fuzzy matching. (e.g., Typing "Interstelar" correctly guesses "Interstellar").
-* **Danmaku Chat:** Live player comments float across the Host's big screen in real-time.
-* **Privacy First:** No data harvesting. No tracking. 100% Open Source.
-* **Dynamic Asset Loading:** Uses a hybrid "Cache-on-Demand" system to keep the install size small (20MB) while fetching high-res posters only when needed.
+## 🚀 Key Innovations
+* **Hybrid Network Core:** Uniquely allows players to join via Local LAN (Offline) and Secure Tunnel (Online) simultaneously in the same game lobby.
+* **"Forgiving" Input System:** Uses `Fuse.js` for client-side fuzzy matching. It auto-corrects typos (e.g., "Interstelar" → "Interstellar"), making the game accessible and fast-paced.
+* **Danmaku Social Layer:** Features a live chat overlay where player comments float across the host's main screen in real-time (like Niconico/Twitch).
+* **Smart Asset Caching:** The engine works 100% offline with generic assets but uses a "Cache-on-Demand" strategy to fetch high-res posters only when connectivity permits.
 
 ## 🛠️ Tech Stack
 * **Backend:** Node.js + Express
-* **Real-time:** Socket.io
+* **Real-time:** Socket.io (WebSocket)
 * **Frontend:** React (Vite)
 * **Search Engine:** Fuse.js (Client-side Fuzzy Search)
-* **Data:** Local JSON (No external DB required for offline mode)
+* **Data:** Local JSON / NoSQL (No external DB required)
 
 ## 🔮 Roadmap (Hackathon Goals)
 - [x] **Phase 1:** Core Offline Server Logic (Node.js/Socket.io)
@@ -35,12 +34,13 @@ If the venue Wi-Fi is congested or the ISP goes down, the game is over. They als
 - [ ] **Phase 4:** Hybrid Tunneling Integration
 
 ## 💿 Installation (Dev)
+
 ```bash
-# Clone the repo
-git clone [https://github.com/YOUR_USERNAME/offline-movie-quiz.git](https://github.com/YOUR_USERNAME/offline-movie-quiz.git)
+# Clone the repository
+git clone [https://github.com/YOUR_USERNAME/cinegnosis.git](https://github.com/YOUR_USERNAME/cinegnosis.git)
 
 # Install dependencies
 npm install
 
-# Start the Server
-npm start
+# Start the Development Server
+npm run dev
