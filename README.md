@@ -34,7 +34,15 @@ In high-density venues like college auditoriums, hackathons, or basements with p
 - [ ] **Phase 4:** Hybrid Tunneling Integration
 
 ## 💿 Installation (Dev)
+## 📂 Project Structure
+This project follows a monorepo-style structure to keep Backend and Frontend separated but synchronized.
 
+```text
+/cinegnosis
+  ├── server/         # Node.js + Socket.io (Game State & Room Logic)
+  ├── client/         # React + Vite (UI, Animation, Chat Overlay)
+  ├── data/           # movies.json (The pre-seeded offline database)
+  └── docs/           # Architecture diagrams & setup guides
 ```bash
 # Clone the repository
 git clone [https://github.com/YOUR_USERNAME/cinegnosis.git](https://github.com/YOUR_USERNAME/cinegnosis.git)
